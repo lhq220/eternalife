@@ -31,20 +31,6 @@ html { height: 100%; }
 	clear: both;
 }
 
-body {
-    font-family: 'Lato', Calibri, Arial, sans-serif;
-    background: #fff;
-    font-weight: 300;
-    font-size: 15px;
-    color: #333;
-    -webkit-font-smoothing: antialiased;
-}
-
-a {
-	color: #555;
-	text-decoration: none;
-}
-
 .container {
 	width: 100%;
 	position: relative;
