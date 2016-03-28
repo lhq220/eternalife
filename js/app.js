@@ -2,10 +2,10 @@ var myApp = angular.module('myApp', ['ngRoute']);
 
 myApp.config(function ($routeProvider) {
     $routeProvider.when ('/', {
-        templateUrl : '/page/index.html',
+        templateUrl : 'https://raw.githubusercontent.com/lhq220/eternalife/master/page/index.html',
         controller: 'IndexController'
     }).when ('/trang2', {
-        templateUrl : '/page/trang2.html',
+        templateUrl : 'https://raw.githubusercontent.com/lhq220/eternalife/master/page/trang2.html',
         controller : 'Trang2Controller'
     }).otherwise({
         redirectTo: '/'
