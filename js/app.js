@@ -2,10 +2,10 @@ var myApp = angular.module('myApp', ['ngRoute']);
 
 myApp.config(function ($routeProvider) {
     $routeProvider.when ('/', {
-        templateUrl : 'https://raw.githubusercontent.com/lhq220/eternalife/master/page/index.html',
+        templateUrl : 'https://rawgit.com/lhq220/eternalife/master/page/index.html',
         controller: 'IndexController'
     }).when ('/trang2', {
-        templateUrl : 'https://raw.githubusercontent.com/lhq220/eternalife/master/page/trang2.html',
+        templateUrl : 'https://rawgit.com/lhq220/eternalife/master/page/trang2.html',
         controller : 'Trang2Controller'
     }).otherwise({
         redirectTo: '/'
@@ -20,8 +20,7 @@ myApp.factory('GetPost', function ($http) {
 })
 myApp.controller('MasterController', ['$scope', function ($scope) {
     'use strict';
-    $scope.name = 'Diễn đàn xe';
-    $scope.logo = '/images/sys/logo-ddx1.png';
+  
 }]);
 myApp.controller('IndexController', ['$scope', '$http', 'GetPost', function ($scope, $http, GetPost) {
     'use strict';
