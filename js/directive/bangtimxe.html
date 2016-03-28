@@ -1,0 +1,80 @@
+ <div class="Timkiembangbieu">
+            <img src="images/sys/bulon-on-search.png" class="bulonLeft" />
+            <img src="images/sys/bulon-on-search.png" class="bulonRight" />
+            <div class="row">
+                <div class="col-lg-6 fleft">
+                    <div class="ConTimkiembangbieu">
+                        <a ng-cloak ng-repeat="dmxe in bangxeObject" class="xe" ng-class="{'active': dmxe.Active  == 1 }" id="{{ dmxe.Name }}" ng-click="this[dmxe.Name]()">
+                            <div ng-cloak ng-if="dmxe.Active ==0">
+                                <div ng-cloak ng-init="imgsrc= dmxe.ImageHover" ng-mouseover="imgsrc= dmxe.Image" ng-mouseout="imgsrc= dmxe.ImageHover">
+                                    <img class="responsive-img" ng-src="{{ imgsrc }}" />
+                                </div>
+                            </div>
+                            <div ng-cloak ng-if="dmxe.Active ==1">
+                                <div ng-cloak ng-init="imgsrc= dmxe.Image" ng-mouseover="imgsrc= dmxe.ImageHover" ng-mouseout="imgsrc= dmxe.Image">
+                                    <img class="responsive-img" ng-src="{{ imgsrc }}" />
+                                </div>
+                            </div>
+                            <span>({{ dmxe.Number }})</span>
+                        </a>
+                    </div>  
+                </div>
+                <div class="col-lg-2 fleft">
+                    <div id="swicth" class="swith_on">
+                        <a ng-click="swith_onz()" id="click_on"></a>
+                        <a ng-click="swith_offz()" id="Click_off"></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 fleft">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="volum-demo">
+                                <img src="../images/sys/kim-nut-van.png" alt='' id="van">
+                                <a rev="0" title="0 đồng" id="v0" ng-click="rotate(-90)">0</a> 
+                                <a rev="10" title="50 triệu" id="v25" ng-click="rotate(-44)">0</a> 
+                                <a rev="20" title="100 triệu" id="v45" ng-click="rotate(-13)">1</a> 
+                                <a rev="30" title="150 triệu" id="v90" ng-click="rotate(16)">2</a> 
+                                <a rev="50" title="200 triệu" id="v120" ng-click="rotate(46)"> 3</a> 
+                                <a rev="100" title="300 triệu" id="v150" ng-click="rotate(77)">4</a>
+                                <a rev="500" title="400 triệu" id="v190" ng-click="rotate(105)">5</a>
+                                <a rev="1000" title="500 triệu" id="v250" ng-click="rotate(136)">6</a>
+                                <a rev="2000" title="1 tỷ" id="v350" ng-click="rotate(166)">7</a> 
+                                <a rev="3000" title="2 tỷ" id="v390" ng-click="rotate(196)">8</a> 
+                                <a rev="4000" title="trên 3 tỷ" id="v450" ng-click="rotate(226)">9</a>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-4">
+                            <danh-sach-hang-xe hangxe-object="listhangxe"></danh-sach-hang-xe>
+                            <div class="w100"></div>
+                        </div>
+                        <div class="col-lg-4"></div>
+                        <!--<div class="col-lg-8 ">
+                            <div class="dropgroup">
+                                <div id="item1" ng-mouseover="dropout()" class="drop">
+                                <span id="ctl00_ContentPlaceHolder1_lblHangxe">Hãng xe</span><i>▼</i>
+                                <div id="listhangxe"></div>
+                                <input type="hidden" name="ctl00$ContentPlaceHolder1$hdfHang" id="ctl00_ContentPlaceHolder1_hdfHang" value="0" />
+                            </div>
+                            <div id="item2" ng-mouseover="dropout()" class="drop">
+                                <span id="ctl00_ContentPlaceHolder1_lblTinhthanh">Tỉnh thành</span><i>▼</i>
+                                <div>
+                                    <a rev='0'>Cả nước</a><a rev='59'>TPHCM</a><a rev='24'>Hà Nội</a><a rev='15'>Đà Nẵng</a><a rev='14'>Cần Thơ</a><a rev='1'>An Giang</a><a rev='2'>Bà Rịa</a><a rev='3'>Bạc Liêu</a><a rev='4'>Bắc Cạn</a><a rev='5'>Bắc Giang</a><a rev='6'>Bắc Ninh</a><a rev='7'>Bến Tre</a><a rev='8'>Bình Dương</a><a rev='9'>Bình Định</a><a rev='10'>Bình Phước</a><a rev='11'>Phan Thiết</a><a rev='12'>Cà Mau</a><a rev='13'>Cao Bằng</a><a rev='16'>Đắc Lắc</a><a rev='17'>Đắc Nông</a><a rev='18'>Điện Biên</a><a rev='19'>Đồng Nai</a><a rev='20'>Đồng Tháp</a><a rev='21'>Gia Lai</a><a rev='22'>Hà Giang</a><a rev='23'>Hà Nam</a><a rev='25'>Hà Tây</a><a rev='26'>Hà Tĩnh</a><a rev='27'>Hải Dương</a><a rev='28'>Hải Phòng</a><a rev='29'>Hậu Giang</a><a rev='30'>Hòa Bình</a><a rev='31'>Hưng Yên</a><a rev='32'>Nha Trang</a><a rev='33'>Kiên Giang</a><a rev='34'>Kon Tum</a><a rev='35'>Lai Châu</a><a rev='36'>Lâm Đồng</a><a rev='37'>Lạng Sơn</a><a rev='38'>Lào Cai</a><a rev='39'>Long An</a><a rev='40'>Nam Định</a><a rev='41'>Nghệ An</a><a rev='42'>Ninh Bình</a><a rev='43'>Ninh Thuận</a><a rev='44'>Phú Thọ</a><a rev='45'>Phú Yên</a><a rev='47'>Quảng Nam</a><a rev='48'>Quảng Ngãi</a><a rev='46'>Quảng Bình</a><a rev='49'>Quảng Ninh</a><a rev='50'>Quảng Trị</a><a rev='51'>Sóc Trăng</a><a rev='52'>Sơn La</a><a rev='53'>Tây Ninh</a><a rev='54'>Thái Bình</a><a rev='55'>Thái Nguyên</a><a rev='56'>Thanh Hóa</a><a rev='57'>Huế</a><a rev='58'>Tiền Giang</a><a rev='60'>Trà Vinh</a><a rev='61'>Tuyên Quang</a><a rev='62'>Vĩnh Long</a><a rev='63'>Vĩnh Phúc</a><a rev='64'>Yên Bái</a>
+                                </div>
+                                <input type="hidden" name="ctl00$ContentPlaceHolder1$hdfTinh" id="ctl00_ContentPlaceHolder1_hdfTinh" value="0" />
+                            </div>
+                            <div id="item3" ng-mouseover="dropout()" class="drop">
+                                <span id="ctl00_ContentPlaceHolder1_lblDongxe">Dòng xe</span><i>▼</i>
+                                <div id="listdongxe">
+                                </div>
+                                <input type="hidden" name="ctl00$ContentPlaceHolder1$hdfDong" id="ctl00_ContentPlaceHolder1_hdfDong" value="0" />
+                            </div>
+                            <a id="NutTimkiembangbieu" onclick="timxe()" class="ButonPress">Tìm Kiếm</a>
+                            </div> 
+                            
+                        </div>-->
+
+                    </div>
+                </div>
+            </div>
+        </div>
